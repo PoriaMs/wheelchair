@@ -17,7 +17,7 @@ def run_cmd(cmd):
 
 
 def create(article_name):
-    run_cmd("hugo new posts/" + article_name + "/index.md")
+    run_cmd("hugo new posts/\"" + article_name + "\"/index.md")
     name = "content/posts/" + article_name + "/index.md"
     for line in fileinput.input(name, inplace=1):
         line = line.replace("Index", article_name)
